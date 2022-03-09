@@ -10,7 +10,9 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
+     
       - name: Terraform Init
         run: terraform init
    # Generates an execution plan for Terraform

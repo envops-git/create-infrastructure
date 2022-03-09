@@ -1,4 +1,3 @@
-# test
 provider "aws"{ region = "eu-central-1"}
 
 
@@ -10,6 +9,7 @@ tags = {
  Environment = "Test"}
 } 
 
+/*
 resource "aws_subnet" "AZ-1-Public-SN" {
 vpc_id     = aws_vpc.ITC-Test-VPC.id  
 cidr_block  = "10.10.0.0/24"
@@ -263,9 +263,6 @@ resource "aws_eks_cluster" "TF-ITC-Test-EKS-Cluster" {
       Name = "ITC-Test-EKS-Cluster"
       Environment = "Test"}
 } 
-
-
-
 ## Create Node Group 
 resource "aws_eks_node_group" "EKS_Test_NG" {
   cluster_name    = aws_eks_cluster.TF-ITC-Test-EKS-Cluster.name
@@ -278,7 +275,6 @@ resource "aws_eks_node_group" "EKS_Test_NG" {
     max_size     = 1
     min_size     = 1
   }
-
   update_config {
     max_unavailable = 1
   }
@@ -289,3 +285,4 @@ resource "aws_eks_node_group" "EKS_Test_NG" {
     aws_iam_role_policy_attachment.ITC-AmazonEC2ContainerRegistryReadOnly,
   ]
 }
+*/

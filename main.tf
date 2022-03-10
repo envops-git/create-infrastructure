@@ -1,5 +1,12 @@
 provider "aws"{ region = "eu-central-1"}
 
+ terraform {
+   backend "s3" {
+     bucket = "envops-terraform-state"
+     key            = "terraform.tfstate"
+     region = "eu-central-1"
+   }
+ }
 
 resource "aws_vpc" "ITC-Test-VPC" {
 cidr_block  ="10.10.0.0/16"

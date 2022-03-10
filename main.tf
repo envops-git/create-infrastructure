@@ -5,6 +5,8 @@ provider "aws"{ region = "eu-central-1"}
      bucket = "envops-terraform-state"
      key            = "terraform.tfstate"
      region = "eu-central-1"
+     dynamodb_table = "TF_Lock_State"
+     encrypt        = true
    }
  }
 
